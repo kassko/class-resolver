@@ -7,7 +7,7 @@ Ajouter l'entrée suivante au composer.json:
 
 ```json
 "require": {
-    "kko/class-resolver": "dev-master"
+    "kassko/class-resolver": "dev-master"
 }
 ```
 
