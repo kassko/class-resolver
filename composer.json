@@ -1,5 +1,5 @@
 {
-    "name":"kko/class-resolver",
+    "name":"kassko/class-resolver",
     "description":"Package to get an object from a class name with its dependencies.",
     "keywords":["class", "resolver", "dependency", "injection", "factory"],
     "require":{
