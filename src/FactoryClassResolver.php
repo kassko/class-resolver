@@ -1,9 +1,9 @@
 <?php
 
-namespace KKO\ClassResolver;
+namespace Kassko\ClassResolver;
 
-use KKO\ClassResolver\ClassFactoryProviderInterface;
-use KKO\ClassResolver\Exception\NotResolvedClassException;
+use Kassko\ClassResolver\ClassFactoryProviderInterface;
+use Kassko\ClassResolver\Exception\NotResolvedClassException;
 
 /**
  * Class resolver to work with a factory.

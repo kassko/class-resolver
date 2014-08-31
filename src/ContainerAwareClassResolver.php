@@ -1,8 +1,8 @@
 <?php
 
-namespace KKO\ClassResolver;
+namespace Kassko\ClassResolver;
 
-use KKO\ClassResolver\Exception\NotResolvedClassException;
+use Kassko\ClassResolver\Exception\NotResolvedClassException;
 use LogicException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 

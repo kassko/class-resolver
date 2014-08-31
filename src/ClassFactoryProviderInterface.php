@@ -1,6 +1,6 @@
 <?php
 
-namespace KKO\ClassResolver;
+namespace Kassko\ClassResolver;
 
 /**
  * Contract for factory witch create object from a class name.

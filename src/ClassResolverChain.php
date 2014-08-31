@@ -1,8 +1,8 @@
 <?php
 
-namespace KKO\ClassResolver;
+namespace Kassko\ClassResolver;
 
-use KKO\ClassResolver\ClassResolverInterface;
+use Kassko\ClassResolver\ClassResolverInterface;
 
 /**
  * Find the good class resolver and delegate to it the work.

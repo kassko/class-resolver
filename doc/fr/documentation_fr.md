@@ -27,7 +27,7 @@ Ci-dessous, un objet est construit à partir de son nom de classe.
 ```php
 <?php
 
-use KKO\ClassResolver\ClassResolverInterface;
+use Kassko\ClassResolver\ClassResolverInterface;
 
 class ClientClass
 {
@@ -57,7 +57,7 @@ construit à partir de son nom de classe:
 ```php
 <?php
 
-use KKO\ClassResolver\ClassResolverInterface;
+use Kassko\ClassResolver\ClassResolverInterface;
 
 class ClientClass
 {
@@ -88,8 +88,8 @@ Exemple d'utilisation
 -------------------
 
 ```php
-use KKO\ClassResolver\ClassResolverChain;
-use KKO\ClassResolver\FactoryClassResolver;
+use Kassko\ClassResolver\ClassResolverChain;
+use Kassko\ClassResolver\FactoryClassResolver;
 
 $classResolver = new ClassResolverChain(
     (new FactoryClassResolver([new CacheFactoryProvider()]))
@@ -97,7 +97,7 @@ $classResolver = new ClassResolverChain(
 ```
 
 ```php
-use KKO\ClassResolver\ClassFactoryProviderInterface;
+use Kassko\ClassResolver\ClassFactoryProviderInterface;
 
 class CacheFactoryProvider implements ClassFactoryProviderInterface
 {
@@ -136,8 +136,8 @@ A l'heure actuelle, il n'existe pas d'interface standard pour les conteneurs de 
 L'interface crée par Symfony a été choisie.
 
 ```php
-use KKO\ClassResolver\ClassResolverChain;
-use KKO\ClassResolver\FactoryClassResolver;
+use Kassko\ClassResolver\ClassResolverChain;
+use Kassko\ClassResolver\FactoryClassResolver;
 
 //Ici du code qui crée $container, une instance de Symfony\Component\DependencyInjection\ContainerInterface
 
@@ -167,8 +167,8 @@ class MyDefaultClassResolver implements ClassResolverInterface
 ```
 
 ```php
-use KKO\ClassResolver\ClassResolverChain;
-use KKO\ClassResolver\FactoryClassResolver;
+use Kassko\ClassResolver\ClassResolverChain;
+use Kassko\ClassResolver\FactoryClassResolver;
 
 $classResolver = new ClassResolverChain(
     (new FactoryClassResolver([new CacheFactoryProvider(), new MyDefaultClassResolver]))

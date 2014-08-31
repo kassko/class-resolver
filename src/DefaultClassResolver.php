@@ -1,6 +1,6 @@
 <?php
 
-namespace KKO\ClassResolver;
+namespace Kassko\ClassResolver;
 
 /**
  * This class resolver is used in the chain class resolver as fallback

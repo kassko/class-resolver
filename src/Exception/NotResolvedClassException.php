@@ -1,6 +1,6 @@
 <?php
 
-namespace KKO\ClassResolver\Exception;
+namespace Kassko\ClassResolver\Exception;
 
 /**
  * This exception is thrown when an object can't be created
