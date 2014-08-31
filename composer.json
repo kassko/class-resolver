@@ -1,0 +1,14 @@
+{
+    "name":"kko/class-resolver",
+    "description":"Package to get an object from a class name with its dependencies.",
+    "keywords":["class", "resolver", "dependency", "injection", "factory"],
+    "require":{
+        "php":">=5.5.0",
+        "symfony/dependency-injection": "~2.5"
+    },
+    "autoload":{
+        "psr-4":{
+            "KKO\\ClassResolver\\": "src"
+        }
+    }
+}
