@@ -12,4 +12,3 @@ Ajouter l'entrée suivante au composer.json:
 ```
 
 [Documentation](doc/fr/documentation_fr.md)
-
