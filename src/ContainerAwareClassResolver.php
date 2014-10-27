@@ -2,12 +2,12 @@
 
 namespace Kassko\ClassResolver;
 
+use Kassko\ClassResolver\ContainerInterface;
 use Kassko\ClassResolver\Exception\NotResolvedClassException;
 use LogicException;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Class resolver to work with a dependency container.
+ * Class resolver wicth allow to work with a dependency container.
  *
  * @author kko
  */

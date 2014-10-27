@@ -6,7 +6,7 @@ use Kassko\ClassResolver\ClassFactoryProviderInterface;
 use Kassko\ClassResolver\Exception\NotResolvedClassException;
 
 /**
- * Class resolver to work with a factory.
+ * Class resolver witch allow to work with factories.
  *
  * @author kko
  */
