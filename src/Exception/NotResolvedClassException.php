@@ -10,8 +10,8 @@ namespace Kassko\ClassResolver\Exception;
  */
 class NotResolvedClassException extends \RuntimeException
 {
-	public function __construct($className)
-	{
-		parent::__construct(sprintf("Can't resolve object from class name \"%s\".", $className));
-	}
+    public function __construct($className)
+    {
+        parent::__construct(sprintf("Can't resolve object from class name \"%s\".", $className));
+    }
 }

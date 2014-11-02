@@ -9,6 +9,6 @@ namespace Kassko\ClassResolver;
  */
 interface ClassFactoryProviderInterface
 {
-	function support($className);
-	function getInstance($className);
+    function support($className);
+    function getInstance($className);
 }

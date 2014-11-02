@@ -12,64 +12,64 @@ use Kassko\ClassResolver\Exception\NotResolvedClassException;
  */
 class FactoryClassResolver implements ClassResolverInterface
 {
-	private $factories;
+    private $factories;
 
-	public function __construct(array $factories = [])
-	{
-		$this->factories = $factories;
-	}
+    public function __construct(array $factories = [])
+    {
+        $this->factories = $factories;
+    }
 
-	public function set(array $factories)
-	{
-		$this->factories = $factories;
+    public function set(array $factories)
+    {
+        $this->factories = $factories;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function add(ClassFactoryProviderInterface $factory)
-	{
-		$this->factories[] = $factory;
+    public function add(ClassFactoryProviderInterface $factory)
+    {
+        $this->factories[] = $factory;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function addCollection(array $factories, $prepend = false)
-	{
-		if (false === $prepend) {
-			array_merge($this->factories, $factories);
-		} else {
-			array_merge($factories, $this->factories);
-		}
+    public function addCollection(array $factories, $prepend = false)
+    {
+        if (false === $prepend) {
+            array_merge($this->factories, $factories);
+        } else {
+            array_merge($factories, $this->factories);
+        }
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function support($className)
-	{
-		try {
-			$this->findFactory($className);
-			return true;
-		} catch (NotResolvedClassException $e) {
-		}
+    public function support($className)
+    {
+        try {
+            $this->findFactory($className);
+            return true;
+        } catch (NotResolvedClassException $e) {
+        }
 
-		return false;
-	}
+        return false;
+    }
 
-	public function resolve($className)
-	{
-		$factory = $this->findFactory($className);
+    public function resolve($className)
+    {
+        $factory = $this->findFactory($className);
 
-		return $factory->getInstance($className);
-	}
+        return $factory->getInstance($className);
+    }
 
-	protected function findFactory($className)
-	{
-		foreach ($this->factories as $factory) {
-			if ($factory->support($className)) {
-				return $factory;
-			}
-		}
+    protected function findFactory($className)
+    {
+        foreach ($this->factories as $factory) {
+            if ($factory->support($className)) {
+                return $factory;
+            }
+        }
 
-		throw new NotResolvedClassException($className);
-	}
+        throw new NotResolvedClassException($className);
+    }
 }
