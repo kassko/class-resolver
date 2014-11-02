@@ -8,7 +8,8 @@
     "description":"Allow to get a constructed object from a class name.",
     "keywords":["class", "resolver", "dependency", "injection", "factory"],
     "require":{
-        "php":">=5.5.0"
+        "php":">=5.5.0",
+        "kassko/common": "~0.1"
     },
     "autoload":{
         "psr-4":{

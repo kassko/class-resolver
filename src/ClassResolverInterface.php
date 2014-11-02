@@ -9,6 +9,6 @@ namespace Kassko\ClassResolver;
  */
 interface ClassResolverInterface
 {
-	function support($className);
+    function support($className);
     function resolve($className);
 }

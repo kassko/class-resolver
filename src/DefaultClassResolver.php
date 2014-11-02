@@ -10,13 +10,13 @@ namespace Kassko\ClassResolver;
  */
 class DefaultClassResolver implements ClassResolverInterface
 {
-	public function support($className)
-	{
-		return true;
-	}
+    public function support($className)
+    {
+        return true;
+    }
 
-	public function resolve($className)
-	{
-		return new $className;
-	}
+    public function resolve($className)
+    {
+        return new $className;
+    }
 }

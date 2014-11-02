@@ -11,68 +11,68 @@ use Kassko\ClassResolver\ClassResolverInterface;
  */
 class ClassResolverChain implements ClassResolverInterface
 {
-	protected $resolvers;
-	protected $defaultResolver;
+    protected $resolvers;
+    protected $defaultResolver;
 
-	public function __construct(array $resolverCollection = [], ClassResolverInterface $defaultResolver = null)
-	{
-		$this->resolvers = $resolverCollection;
-	}
+    public function __construct(array $resolverCollection = [], ClassResolverInterface $defaultResolver = null)
+    {
+        $this->resolvers = $resolverCollection;
+    }
 
-	public function set(array $resolverCollection)
-	{
-		$this->resolvers[] = $resolverCollection;
+    public function set(array $resolverCollection)
+    {
+        $this->resolvers[] = $resolverCollection;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function add(ClassResolverInterface $classResolver)
-	{
-		$this->resolvers[] = $classResolver;
+    public function add(ClassResolverInterface $classResolver)
+    {
+        $this->resolvers[] = $classResolver;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function addCollection(array $resolverCollection, $prepend = false)
-	{
-		if (false === $prepend) {
-			array_merge($this->resolvers, $resolverCollection);
-		} else {
-			array_merge($resolverCollection, $this->resolvers);
-		}
+    public function addCollection(array $resolverCollection, $prepend = false)
+    {
+        if (false === $prepend) {
+            array_merge($this->resolvers, $resolverCollection);
+        } else {
+            array_merge($resolverCollection, $this->resolvers);
+        }
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function setDefault(ClassResolverInterface $defaultResolver)
-	{
-		$this->defaultResolver = $defaultResolver;
+    public function setDefault(ClassResolverInterface $defaultResolver)
+    {
+        $this->defaultResolver = $defaultResolver;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function support($className)
-	{
-		//The ClassResolverChain has a defaultResolver,
-		//then it can fall back on it, and then it supports all class names.
-		return true;
-	}
+    public function support($className)
+    {
+        //The ClassResolverChain has a defaultResolver,
+        //then it can fall back on it, and then it supports all class names.
+        return true;
+    }
 
-	public function resolve($className)
-	{
-		$resolver = $this->findResolver($className);
+    public function resolve($className)
+    {
+        $resolver = $this->findResolver($className);
 
-		return $resolver->resolve($className);
-	}
+        return $resolver->resolve($className);
+    }
 
-	protected function findResolver($className)
-	{
-		foreach ($this->resolvers as $resolver) {
-			if ($resolver->support($className)) {
-				return $resolver;
-			}
-		}
+    protected function findResolver($className)
+    {
+        foreach ($this->resolvers as $resolver) {
+            if ($resolver->support($className)) {
+                return $resolver;
+            }
+        }
 
-		return $this->defaultResolver ?: $this->defaultResolver = new DefaultClassResolver;
-	}
+        return $this->defaultResolver ?: $this->defaultResolver = new DefaultClassResolver;
+    }
 }
