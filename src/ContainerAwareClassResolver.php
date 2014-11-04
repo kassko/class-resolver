@@ -2,7 +2,7 @@
 
 namespace Kassko\ClassResolver;
 
-use Kassko\Common\DependencyInjection\ContainerInterface;
+use Kassko\ClassResolver\ContainerInterface;
 use Kassko\ClassResolver\Exception\NotResolvedClassException;
 use LogicException;
 
