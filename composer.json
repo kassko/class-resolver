@@ -5,7 +5,7 @@
             "name":"Kassko"
         }
     ],
-    "description":"Allow to get a constructed object from a class name.",
+    "description":"Retrieve an object from a class name.",
     "keywords":["class", "resolver", "dependency", "injection", "factory"],
     "require":{
         "php":">=5.5.0"
