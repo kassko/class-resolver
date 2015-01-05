@@ -11,7 +11,7 @@ Ajouter l'entrée suivante au composer.json:
 
 ```json
 "require": {
-    "kassko/class-resolver": "dev-master"
+    "kassko/class-resolver": "~0.3.0@alpha"
 }
 ```
 
