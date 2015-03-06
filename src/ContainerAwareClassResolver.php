@@ -71,6 +71,10 @@ class ContainerAwareClassResolver implements ClassResolverInterface
 
     protected function getServiceId($className)
     {
+        if ('@' === $className[0]) {//Class name is a service if it starts by the char '#'.
+            return substr($className, 1);
+        }
+
         $className = trim($className, '\\');
 
         if (! isset($this->classNameToServiceId[$className])) {
