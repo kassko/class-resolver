@@ -2,6 +2,8 @@
 
 namespace Kassko\ClassResolver;
 
+use Kassko\ClassResolver\Exception\NotResolvedClassException;
+
 /**
  * Class resolver witch allow to work with a factory callable.
  *
@@ -23,8 +25,13 @@ class CallableClassResolver implements ClassResolverInterface
         return $this;
     }
 
+    public function support($className)
+    {
+        return true;
+    }
+
     public function resolve($className)
     {
-        $this->factoryCallable->__invoke($className);
+        return $this->factoryCallable->__invoke($className);
     }
 }
