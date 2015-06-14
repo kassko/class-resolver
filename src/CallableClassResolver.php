@@ -2,8 +2,6 @@
 
 namespace Kassko\ClassResolver;
 
-use Kassko\ClassResolver\Exception\NotResolvedClassException;
-
 /**
  * Class resolver witch allow to work with a factory callable.
  *
