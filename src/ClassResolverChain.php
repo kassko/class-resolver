@@ -5,7 +5,8 @@ namespace Kassko\ClassResolver;
 use Kassko\ClassResolver\ClassResolverInterface;
 
 /**
- * Find the good class resolver and delegate to it the work.
+ * A single class resolver that hide the usage of multiples.
+ * Loop on all class resolvers until one can resolve the class name.
  *
  * @author kko
  */
@@ -21,7 +22,7 @@ class ClassResolverChain implements ClassResolverInterface
 
     public function set(array $resolverCollection)
     {
-        $this->resolvers[] = $resolverCollection;
+        $this->resolvers = $resolverCollection;
 
         return $this;
     }

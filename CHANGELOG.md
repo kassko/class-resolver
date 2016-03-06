@@ -1,3 +1,6 @@
+`0.3.3.0 - 2016/06/01 - New version`:
+* `New`: Add new resolvers. 
+
 `0.3.2.1 - 2015/06/14 - Fix version`:
 * `Fix`: Fix missing method `support()` in `CallableClassResolver`. 
 
