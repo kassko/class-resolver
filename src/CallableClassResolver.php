@@ -3,7 +3,12 @@
 namespace Kassko\ClassResolver;
 
 /**
- * Class resolver witch allow to work with a factory callable.
+ * @deprecated Use FactoryAdapterClassResolver or StaticFactoryAdapterClassResolver instead
+ * 
+ * Class resolver witch allows to work with a factory callable.
+ *
+ * @see ServiceAdapterClassResolver
+ * @see StaticClassAdapterClassResolver
  *
  * @author kko
  */
@@ -30,6 +35,6 @@ class CallableClassResolver implements ClassResolverInterface
 
     public function resolve($className)
     {
-        return $this->factoryCallable->__invoke($className);
+        return call_user_func_array($this->factoryCallable, [$className]);
     }
 }

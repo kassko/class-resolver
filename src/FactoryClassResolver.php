@@ -6,7 +6,12 @@ use Kassko\ClassResolver\ClassFactoryProviderInterface;
 use Kassko\ClassResolver\Exception\NotResolvedClassException;
 
 /**
- * Class resolver witch allow to work with factories.
+ * @deprecated Use ServiceAdapterClassResolver or StaticClassAdapterClassResolver instead
+ *
+ * Class resolver witch allows to work with factories.
+ *
+ * @see ServiceAdapterClassResolver
+ * @see StaticClassAdapterClassResolver
  *
  * @author kko
  */
