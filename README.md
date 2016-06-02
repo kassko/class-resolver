@@ -134,14 +134,14 @@ $classResolver = new VariableContainerAwareClassResolver($container, 'get', 'has
 The `get` method is the method that resolves the service and the `has` method is the method that checks if the service exists.
 
 
-#### From a container adapter that implements [`Kassko\ClassResolver\ContainerInterface`](src/ContainerInterface)
+#### From a container adapter that implements [`Kassko\ClassResolver\ContainerInterface`](src/ContainerInterface.php)
 
 ```php
 $container = new MyContainerAdapter($container);
 $classResolver = new ContainerAwareClassResolver($container);
 ```
 
-You can find an adapter in the bundle class-resolver-bundle. This is [`an adapter for Symfony container`](https://github.com/kassko/class-resolver-bundle/blob/master/src/Adapter/Container/SymfonyContainerAdapter).
+You can find an adapter in the bundle class-resolver-bundle. This is [`an adapter for Symfony container`](https://github.com/kassko/class-resolver-bundle/blob/master/src/Adapter/Container/SymfonyContainerAdapter.php).
 
 #### From a closure 
 
